@@ -1,0 +1,69 @@
+<html>
+    <style>
+        table
+        {
+            border:sienna;
+            border-width: medium;
+            font-size: x-large;
+            border :2px;
+        }
+        th{
+            font-size: x-large;
+            color: sienna;
+            border :2px solid;
+            padding :3px;
+        }
+        td{
+            font-size: x-large;
+            color: sienna;
+            border :2px solid;
+            padding :3px;
+        }
+
+    </style>
+</html>
+<br/>
+<h4><u>Pipes example</u></h4>
+<table>
+<thead>
+    <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Mobile Number</th>
+        <th>DOB</th>
+        <th>Currency</th>
+        <th>Gender</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let student of StdList">
+  <td>{{student.StdID}}</td>
+  <td>{{student.Name |titlecase}}</td>
+  <td>{{student.MobileNumber|date :'MM/dd/yy'}}</td>
+  <td>{{student.DOB}}</td>
+  <td>{{student.Currency|currency:'USD': true}}</td>
+  <td>{{student.gender|myTitle:student.gender}}</td>
+    </tr>
+</tbody>
+</table>
+
+<br/>
+<br/>
+<h3>Parametirized pipes on date</h3>
+<p>Date Pipe : {{today | date}}</p>
+<p>Full Date : {{today | date:'fullDate'}}</p>
+<p>Medium Date : {{today | date:'medium'}}</p>
+<p>Short Date : {{today | date:'short'}}</p>
+<p>Date (dd/MM/yyyy) : {{today | date:'dd/MM/yyyy'}}</p>
+<p>Time : {{today | date:'h:mm a z'}}</p>
+<p>Medium Time : {{today | date:'mediumTime'}}</p>
+<p>Long : {{today | date:'MMMM d, y, h:mm:ss a z'}}</p>
+
+<br/>
+<br/>
+<h3>Parametirized pipes on currency</h3>
+<p>Currency USD in Symbol : {{currency | currency:'USD':true}}</p>
+<p>Currency INR in Symbol : {{currency | currency:'INR':true}}</p>
+<p>Currency USD in Code : {{currency | currency:'USD':false:'2.2-2'}}</p>
+<p>Currency INR in Code : {{currency | currency:'INR':false:'2.3-3'}}</p>
+

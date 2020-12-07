@@ -1,0 +1,24 @@
+<html>
+    <style>
+        .radioClass {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+    </style>
+</html>
+<p>childcomponent radio buttons design</p>
+<br/>
+<span class="radioClass">Show : </span>
+
+<input type="radio" name="options"  [(ngModel)]="SelectedRadioButtonValue"
+(change)="onRadioButtonSelectionChange()" value="All"/>
+<span class="radioClass">{{"All(" + all + ")"}}</span>
+
+<input name="options" type="radio"  [(ngModel)]="SelectedRadioButtonValue"
+(change)="onRadioButtonSelectionChange()" value="Male">
+<span class="radioClass">{{"Male(" + male + ")"}}</span>
+
+<input name="options" type="radio"  [(ngModel)]="SelectedRadioButtonValue"
+(change)="onRadioButtonSelectionChange()" value="Female">
+<span class="radioClass">{{"Female(" + female + ")"}}</span>

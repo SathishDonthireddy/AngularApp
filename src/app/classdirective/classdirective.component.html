@@ -1,0 +1,34 @@
+
+<html>
+    <style>
+    .class
+    {
+        color: red;
+        background-color: seashell;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .class1
+    {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    </style>
+    <body>
+        <!-- using single class as a string -->
+        <span [ngClass]="'class'">This is class binding using single string</span> 
+        <br/>
+        <!-- using multiple classes as a string -->
+        <span [ngClass]="'class class1'">This is class binding using single string</span>
+        <br/>
+        <!-- using multiple classes as a array -->
+        <span [ngClass]="['class', 'class1']">This is class binding using array</span>
+
+        <br/>
+        <!-- using multiple classes as a object -->
+        <span [ngClass]="{'class':true, 'class1':true}">This is class binding using array</span>
+
+        <br/>
+        <!-- using multiple classes as a comonent method calling -->
+        <span [ngClass]="AddCSSClasses('type1')">This is class binding using component method</span>
+    </body>
+</html>

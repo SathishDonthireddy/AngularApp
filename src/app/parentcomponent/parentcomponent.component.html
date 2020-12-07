@@ -1,0 +1,63 @@
+<html>
+    <style>
+        table {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid #369;
+    padding:5px;
+}
+th{
+    border: 1px solid #369;
+    padding:5px;
+}
+    </style>
+</html>
+<p>Container Component ---- Nested component</p>
+<p>Adding Child component to parent component!</p>
+<app-childcomponent
+[all]="getTotalStudentsCount()"
+[male]="getMaleStudentsCount()"
+[female]="getFemaleStudentsCount()"
+(countRadioButtonSelectionChanged)="onStudentCountRadioButtonChange($event)"
+></app-childcomponent>
+
+<br/><br/>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let student of studentList;">
+            <tr *ngIf="selectedStudentCountRadioButton=='All' ||
+            selectedStudentCountRadioButton==student.Gender">
+            <td>{{student.StudentID | uppercase}}</td>
+            <td>{{student.FirstName | uppercase}}</td>
+            <td>{{student.LastName}}</td> 
+            <td>{{student.Gender}}</td>      
+        </tr>
+    </ng-container>       
+        <!-- <tr *ngFor='let student of studentList'>
+            <td>{{student.StudentID | uppercase}}</td>
+            <td>{{student.FirstName | uppercase}}</td>
+            <td>{{student.LastName}}</td> 
+            <td>{{student.Gender}}</td>      
+            
+        </tr> -->
+        <!-- <td>{{student.DOB |date:'dd/mm/yy'}}</td> -->
+        <tr *ngIf="!studentList || studentList.length==0">
+            <td colspan="10">
+                No Students to display
+            </td>
+        </tr>
+    </tbody>
+</table>

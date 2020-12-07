@@ -1,0 +1,62 @@
+<style>
+    table {
+        color: #369;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: large;
+        border-collapse: collapse;
+    }
+    td {
+        border: 1px solid black;
+    }
+
+    .TableBorder
+    {
+    color: red;
+    background-color: yellow;
+    }
+</style>
+<html>
+<body>
+    <table class="TableBorder">
+        <thead>
+        <tr>
+            <th attr.colspan='ColumnSpan'>
+                Student Information List
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td> <b>
+                Name</b>
+            </td>
+            <td >
+                {{name}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Branch
+            </td>
+            <td>
+                {{Branch}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Mobile Number
+            </td>
+            <td>{{MobileNumber}}</td>
+        </tr>
+        <tr>
+            <td>
+                Gender
+            </td>
+            <td>{{Gender}}</td>
+        </tr>
+    </tbody>
+    </table>
+</body>
+</html>
+
+

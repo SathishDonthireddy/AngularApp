@@ -1,0 +1,28 @@
+<br/>
+<b>Structural directives (ngIf)</b>
+
+<input type="radio" name='rdbtn' (click)='Check(true)'>
+<input type="radio" name='rdbtn' (click)='Check(false)'>
+
+<div
+*ngIf="isValid">
+<b>Data is valid</b>
+</div>
+
+<div
+*ngIf="!isValid">
+<b>Data is invalid</b>
+</div>
+
+<div *ngIf="isValid then thenblock else elseblock"> </div>
+  <ng-template #thenblock>
+    <div>
+    <b>The is Then Block</b>
+   </div>  
+  </ng-template>
+ 
+  <ng-template #elseblock>
+    <div >
+        <b>The is Else Block</b>
+     </div> 
+  </ng-template>
